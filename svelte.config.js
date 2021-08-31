@@ -1,5 +1,5 @@
-import preprocess from "svelte-preprocess";
 import adapter from '@sveltejs/adapter-static'
+import preprocess from 'svelte-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,11 +7,19 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
     adapter: adapter(),
+    prerender: {
+      crawl: true,
+      enabled: true,
+      force: true,
+      pages: ['*'],
+    },
   },
 
-  preprocess: [preprocess({
-    "postcss": true
-  })]
+  preprocess: [
+    preprocess({
+      postcss: true,
+    }),
+  ],
 }
 
 export default config
