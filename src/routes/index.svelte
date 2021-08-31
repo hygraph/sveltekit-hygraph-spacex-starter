@@ -18,9 +18,6 @@
 
 <script>
   export let launches
-  console.log('=====================')
-  console.log(`hello`)
-  console.log('=====================')
 </script>
 
 <svelte:head>
